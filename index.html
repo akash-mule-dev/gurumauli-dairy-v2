@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurumauli Dugdhalay — Pure Dairy from Solapur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-marathi">गुरुमाऊली</span>
+                <span class="logo-sub">दुग्धालय</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero with Milk Pour Animation -->
+    <section class="hero" id="home">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text reveal">
+                <p class="hero-tagline-marathi">शुध्द सात्विक · अमृता समान</p>
+                <h1>Fuel Your Day<br>with <span class="text-orange">Pure Milk</span></h1>
+                <p class="hero-desc">From the heart of Solapur — fresh, wholesome dairy that gives you and your family the energy to conquer every day.</p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn btn-primary">Explore Products</a>
+                    <a href="#contact" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+            <div class="hero-animation reveal reveal-right">
+                <!-- Milk Pour + Kid Energy Animation -->
+                <div class="animation-scene" id="animScene">
+                    <!-- Milk Bottle -->
+                    <svg class="milk-bottle" viewBox="0 0 80 180" fill="none">
+                        <rect x="25" y="0" width="30" height="20" rx="4" fill="#f0e6d3" stroke="#d4c4a8" stroke-width="1.5"/>
+                        <rect x="20" y="18" width="40" height="8" rx="3" fill="#F5921E"/>
+                        <path d="M20 26 L15 50 L15 170 Q15 178 23 178 L57 178 Q65 178 65 170 L65 50 L60 26Z" fill="white" stroke="#e8ddd0" stroke-width="1.5"/>
+                        <path class="milk-level" d="M17 60 L17 170 Q17 176 23 176 L57 176 Q63 176 63 170 L63 60Z" fill="url(#bottleMilk)"/>
+                        <text x="40" y="120" text-anchor="middle" font-size="7" font-weight="700" fill="#F5921E" font-family="Poppins">गुरुमाऊली</text>
+                        <defs>
+                            <linearGradient id="bottleMilk" x1="40" y1="60" x2="40" y2="176">
+                                <stop offset="0%" stop-color="#FFFDF7"/>
+                                <stop offset="100%" stop-color="#f5edd8"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <!-- Pouring Stream -->
+                    <div class="pour-stream" id="pourStream">
+                        <svg viewBox="0 0 40 120" fill="none">
+                            <path d="M20 0 Q22 40 18 60 Q14 80 20 120" stroke="url(#pourGrad)" stroke-width="8" stroke-linecap="round" fill="none"/>
+                            <path d="M20 0 Q22 40 18 60 Q14 80 20 120" stroke="white" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
+                            <defs>
+                                <linearGradient id="pourGrad" x1="20" y1="0" x2="20" y2="120">
+                                    <stop offset="0%" stop-color="#FFFDF7"/>
+                                    <stop offset="100%" stop-color="#f5edd8" stop-opacity="0.6"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <!-- Glass -->
+                    <svg class="milk-glass" viewBox="0 0 70 100" fill="none">
+                        <path d="M8 0 L2 90 Q2 98 10 98 L60 98 Q68 98 68 90 L62 0Z" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+                        <path class="glass-milk" d="M6 30 L3 90 Q3 96 10 96 L60 96 Q67 96 67 90 L64 30Z" fill="url(#glassMilk)" opacity="0">
+                            <animate id="fillGlass" attributeName="opacity" from="0" to="1" dur="1s" begin="2s" fill="freeze"/>
+                        </path>
+                        <ellipse cx="35" cy="30" rx="29" ry="4" fill="white" opacity="0">
+                            <animate attributeName="opacity" from="0" to="0.7" dur="0.5s" begin="2.5s" fill="freeze"/>
+                        </ellipse>
+                        <rect x="18" y="10" width="8" height="20" rx="2" fill="white" opacity="0.15"/>
+                        <defs>
+                            <linearGradient id="glassMilk" x1="35" y1="30" x2="35" y2="96">
+                                <stop offset="0%" stop-color="#FFFEF9"/>
+                                <stop offset="100%" stop-color="#f0e4cc"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <!-- Kid Character -->
+                    <div class="kid-character" id="kidChar">
+                        <svg viewBox="0 0 120 200" fill="none">
+                            <!-- Body -->
+                            <rect x="35" y="75" width="50" height="60" rx="12" fill="#F5921E"/>
+                            <!-- Shorts -->
+                            <rect x="38" y="130" width="20" height="30" rx="6" fill="#2D3561"/>
+                            <rect x="62" y="130" width="20" height="30" rx="6" fill="#2D3561"/>
+                            <!-- Shoes -->
+                            <ellipse cx="48" cy="162" rx="12" ry="6" fill="#F5921E"/>
+                            <ellipse cx="72" cy="162" rx="12" ry="6" fill="#F5921E"/>
+                            <!-- Arms -->
+                            <rect class="kid-arm-left" x="22" y="78" width="16" height="40" rx="8" fill="#FDBF60"/>
+                            <rect class="kid-arm-right" x="82" y="78" width="16" height="40" rx="8" fill="#FDBF60"/>
+                            <!-- Head -->
+                            <circle cx="60" cy="45" r="32" fill="#FDBF60"/>
+                            <!-- Hair -->
+                            <path d="M30 35 Q35 5 60 10 Q85 5 90 35 Q92 20 80 12 Q65 0 45 12 Q32 20 30 35Z" fill="#2D3561"/>
+                            <!-- Eyes -->
+                            <circle class="kid-eye-l" cx="48" cy="42" r="4" fill="#2D3561"/>
+                            <circle class="kid-eye-r" cx="72" cy="42" r="4" fill="#2D3561"/>
+                            <circle cx="49" cy="41" r="1.5" fill="white"/>
+                            <circle cx="73" cy="41" r="1.5" fill="white"/>
+                            <!-- Smile -->
+                            <path class="kid-mouth" d="M48 55 Q60 65 72 55" stroke="#2D3561" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                            <!-- Blush -->
+                            <ellipse cx="38" cy="52" rx="6" ry="3" fill="#FF9A9A" opacity="0.5"/>
+                            <ellipse cx="82" cy="52" rx="6" ry="3" fill="#FF9A9A" opacity="0.5"/>
+                        </svg>
+                        <!-- Energy Burst -->
+                        <div class="energy-burst" id="energyBurst">
+                            <div class="energy-star" style="--i:0">⚡</div>
+                            <div class="energy-star" style="--i:1">💪</div>
+                            <div class="energy-star" style="--i:2">✨</div>
+                            <div class="energy-star" style="--i:3">⭐</div>
+                            <div class="energy-star" style="--i:4">🌟</div>
+                            <div class="energy-star" style="--i:5">💥</div>
+                            <div class="energy-ring"></div>
+                            <div class="energy-ring ring-2"></div>
+                        </div>
+                        <!-- Power Lines -->
+                        <div class="power-lines" id="powerLines">
+                            <div class="power-line" style="--angle: 0deg"></div>
+                            <div class="power-line" style="--angle: 45deg"></div>
+                            <div class="power-line" style="--angle: 90deg"></div>
+                            <div class="power-line" style="--angle: 135deg"></div>
+                            <div class="power-line" style="--angle: 180deg"></div>
+                            <div class="power-line" style="--angle: 225deg"></div>
+                            <div class="power-line" style="--angle: 270deg"></div>
+                            <div class="power-line" style="--angle: 315deg"></div>
+                        </div>
+                    </div>
+
+                    <!-- Floating text -->
+                    <div class="power-text" id="powerText">POWER UP!</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,70 1440,80 L1440,120 L0,120Z" fill="white"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Story</span>
+                <h2>Tradition Meets <span class="text-indigo">Freshness</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card reveal">
+                    <div class="about-icon-wrap"><span class="about-icon">🏭</span></div>
+                    <h3>Our Dairy Plant</h3>
+                    <p>Located in Venkatesh Nagar, Bhogaon, Solapur, our modern dairy plant processes fresh milk daily using pasteurization and homogenization.</p>
+                </div>
+                <div class="about-card reveal" style="--delay: 0.1s">
+                    <div class="about-icon-wrap"><span class="about-icon">🥛</span></div>
+                    <h3>Pure & Sattvic</h3>
+                    <p>Every product upholds our promise — <em>शुध्द सात्विक, अमृता समान</em>. Pure, wholesome, and as precious as nectar itself.</p>
+                </div>
+                <div class="about-card reveal" style="--delay: 0.2s">
+                    <div class="about-icon-wrap"><span class="about-icon">🌿</span></div>
+                    <h3>Farm to Home</h3>
+                    <p>We source directly from local dairy farmers across the Solapur region, ensuring freshness from farm to your doorstep every morning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Milk Journey Animation Section -->
+    <section class="milk-journey">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label section-label-light">The Journey</span>
+                <h2 class="text-white">From Farm to <span class="text-orange">Your Glass</span></h2>
+            </div>
+            <div class="journey-timeline">
+                <div class="journey-step reveal" style="--delay: 0s">
+                    <div class="journey-icon">🐄</div>
+                    <div class="journey-line"></div>
+                    <h3>Farm Fresh</h3>
+                    <p>Collected from local farms every morning</p>
+                </div>
+                <div class="journey-step reveal" style="--delay: 0.15s">
+                    <div class="journey-icon">🏭</div>
+                    <div class="journey-line"></div>
+                    <h3>Processed</h3>
+                    <p>Pasteurized & homogenized at our plant</p>
+                </div>
+                <div class="journey-step reveal" style="--delay: 0.3s">
+                    <div class="journey-icon">❄️</div>
+                    <div class="journey-line"></div>
+                    <h3>Cold Chain</h3>
+                    <p>Stored below 4°C continuously</p>
+                </div>
+                <div class="journey-step reveal" style="--delay: 0.45s">
+                    <div class="journey-icon">🥛</div>
+                    <h3>Your Home</h3>
+                    <p>Fresh on your table, every single day</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">What We Make</span>
+                <h2>Our <span class="text-orange">Products</span></h2>
+                <p class="section-desc">A complete range of fresh dairy products, crafted daily.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card reveal" style="--delay: 0s">
+                    <div class="product-color-strip" style="--strip-color: #F5921E"></div>
+                    <div class="product-emoji">🥛</div>
+                    <h3>Fresh Milk</h3>
+                    <p>Pasteurized, homogenized standardized fresh milk. 200ml & 500ml.</p>
+                    <div class="product-tag">Fat: 4.5% · SNF: 8.5%</div>
+                </div>
+                <div class="product-card reveal" style="--delay: 0.06s">
+                    <div class="product-color-strip" style="--strip-color: #00AEEF"></div>
+                    <div class="product-emoji">🍶</div>
+                    <h3>Buttermilk (ताक)</h3>
+                    <p>Traditional chilled buttermilk — fresh curd, water & salt.</p>
+                    <div class="product-tag">500ml & 1000ml</div>
+                </div>
+                <div class="product-card reveal" style="--delay: 0.12s">
+                    <div class="product-color-strip" style="--strip-color: #F7C948"></div>
+                    <div class="product-emoji">🧈</div>
+                    <h3>Ghee (तूप)</h3>
+                    <p>Pure clarified butter, traditional method. Rich aroma & golden texture.</p>
+                    <div class="product-tag">Premium Quality</div>
+                </div>
+                <div class="product-card reveal" style="--delay: 0s">
+                    <div class="product-color-strip" style="--strip-color: #2D3561"></div>
+                    <div class="product-emoji">🫕</div>
+                    <h3>Dahi (दही)</h3>
+                    <p>Fresh, thick, creamy curd set naturally. A staple of every meal.</p>
+                    <div class="product-tag">Set Fresh Daily</div>
+                </div>
+                <div class="product-card reveal" style="--delay: 0.06s">
+                    <div class="product-color-strip" style="--strip-color: #F5921E"></div>
+                    <div class="product-emoji">🧀</div>
+                    <h3>Paneer (पनीर)</h3>
+                    <p>Soft, fresh malai paneer from pure full-cream milk.</p>
+                    <div class="product-tag">Malai Paneer</div>
+                </div>
+                <div class="product-card reveal" style="--delay: 0.12s">
+                    <div class="product-color-strip" style="--strip-color: #8DC63F"></div>
+                    <div class="product-emoji">🥤</div>
+                    <h3>Flavoured Milk</h3>
+                    <p>Sugandhi Dudh — chilled, sweet, vanilla-flavoured. 200ml.</p>
+                    <div class="product-tag">Serve Chilled</div>
+                </div>
+                <div class="product-card reveal" style="--delay: 0s">
+                    <div class="product-color-strip" style="--strip-color: #F7C948"></div>
+                    <div class="product-emoji">🍮</div>
+                    <h3>Shrikhand (श्रीखंड)</h3>
+                    <p>Sweetened strained yogurt — Maharashtrian dessert classic.</p>
+                    <div class="product-tag">Traditional Recipe</div>
+                </div>
+                <div class="product-card reveal" style="--delay: 0.06s">
+                    <div class="product-color-strip" style="--strip-color: #F5921E"></div>
+                    <div class="product-emoji">🥭</div>
+                    <h3>Amrakhand (आम्रखंड)</h3>
+                    <p>Mango shrikhand — seasonal delight of dairy & mangoes.</p>
+                    <div class="product-tag">Seasonal Special</div>
+                </div>
+                <div class="product-card reveal" style="--delay: 0.12s">
+                    <div class="product-color-strip" style="--strip-color: #00AEEF"></div>
+                    <div class="product-emoji">🍚</div>
+                    <h3>Basundi (बासुंदी)</h3>
+                    <p>Slow-simmered sweetened milk dessert. A festive favourite.</p>
+                    <div class="product-tag">Festive Favourite</div>
+                </div>
+                <div class="product-card reveal" style="--delay: 0s">
+                    <div class="product-color-strip" style="--strip-color: #8DC63F"></div>
+                    <div class="product-emoji">🧈</div>
+                    <h3>Butter (लोणी)</h3>
+                    <p>Fresh white butter churned from cream. Smooth & natural.</p>
+                    <div class="product-tag">Freshly Churned</div>
+                </div>
+                <div class="product-card reveal" style="--delay: 0.06s">
+                    <div class="product-color-strip" style="--strip-color: #2D3561"></div>
+                    <div class="product-emoji">🥣</div>
+                    <h3>Chakka (चक्का)</h3>
+                    <p>Thick hung curd — the base for shrikhand & traditional sweets.</p>
+                    <div class="product-tag">Base Ingredient</div>
+                </div>
+                <div class="product-card reveal" style="--delay: 0.12s">
+                    <div class="product-color-strip" style="--strip-color: #00AEEF"></div>
+                    <div class="product-emoji">🥛</div>
+                    <h3>Lassi (लस्सी)</h3>
+                    <p>Yogurt drink — sweet or salted, probiotic-rich, made fresh daily.</p>
+                    <div class="product-tag">Sweet & Salted</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label section-label-light">Why Choose Us</span>
+                <h2 class="text-white">The Gurumauli <span class="text-orange">Difference</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature reveal">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>FSSAI Certified</h3>
+                    <p>Manufactured under strict FSSAI guidelines (Lic: 11524088000135).</p>
+                </div>
+                <div class="feature reveal" style="--delay: 0.1s">
+                    <div class="feature-icon">🌱</div>
+                    <h3>100% Vegetarian</h3>
+                    <p>Every product carries the green veg mark. Pure vegetarian dairy.</p>
+                </div>
+                <div class="feature reveal" style="--delay: 0.2s">
+                    <div class="feature-icon">❄️</div>
+                    <h3>Cold Chain</h3>
+                    <p>Stored continuously below 4°C from production to delivery.</p>
+                </div>
+                <div class="feature reveal" style="--delay: 0.3s">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Local Sourcing</h3>
+                    <p>Supporting dairy farmers across the Solapur region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat reveal">
+                    <div class="stat-number" data-target="12">0</div>
+                    <div class="stat-suffix">+</div>
+                    <p>Dairy Products</p>
+                </div>
+                <div class="stat reveal" style="--delay: 0.1s">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-suffix">+</div>
+                    <p>Happy Families Daily</p>
+                </div>
+                <div class="stat reveal" style="--delay: 0.2s">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-suffix">%</div>
+                    <p>Pure & Natural</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Reach Out</span>
+                <h2>Get in <span class="text-indigo">Touch</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>Venkatesh Nagar, Bhogaon,<br>Solapur — 413 222, Maharashtra</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p><a href="tel:9326103737">93261 03737</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Mon – Sat: 6:00 AM – 8:00 PM<br>Sunday: 6:00 AM – 12:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📋</div>
+                        <div>
+                            <h4>FSSAI License</h4>
+                            <p>11524088000135</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper reveal reveal-right">
+                    <form class="contact-form" id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="tel" placeholder="Phone Number" required>
+                        <textarea placeholder="Your Message" rows="4" required></textarea>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-marathi" style="color:white">गुरुमाऊली</span>
+                        <span class="logo-sub" style="color:#F5921E">दुग्धालय</span>
+                    </div>
+                    <p class="footer-tagline">शुध्द सात्विक · अमृता समान</p>
+                    <p class="footer-tagline-en">Pure, Wholesome & Precious as Nectar</p>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#products">Products</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Products</h4>
+                    <span>Fresh Milk</span>
+                    <span>Dahi & Chakka</span>
+                    <span>Ghee & Butter</span>
+                    <span>Shrikhand</span>
+                    <span>Paneer</span>
+                    <span>Lassi & Buttermilk</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Gurumauli Dugdhalay. All rights reserved.</p>
+                <p>Manufactured & Marketed by <strong>Gurumauli Dugdhalay</strong>, Solapur</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
