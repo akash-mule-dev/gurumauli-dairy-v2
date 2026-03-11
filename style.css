@@ -277,36 +277,19 @@ a { text-decoration: none; color: inherit; }
 .orbit-ring {
     position: absolute;
     top: 50%; left: 50%;
-    width: 320px; height: 320px;
-    transform: translate(-50%, -50%);
-    animation: orbitSpin 15s linear infinite;
-    z-index: 1;
-}
-@keyframes orbitSpin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
+    width: 0; height: 0;
+    z-index: 4;
 }
 .orbit-item {
     position: absolute;
-    font-size: 1.8rem;
-    animation: orbitCounter 15s linear infinite, orbitFloat 3s ease-in-out infinite;
-    animation-delay: var(--orbit-delay), var(--orbit-delay);
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+    font-size: 2rem;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+    animation: orbitAround 15s linear infinite;
+    animation-delay: var(--orbit-delay);
 }
-/* Place 6 items evenly on a circle */
-.orbit-item:nth-child(1) { top: 0; left: 50%; transform: translate(-50%, -50%); }
-.orbit-item:nth-child(2) { top: 25%; right: 0; transform: translate(50%, -50%); }
-.orbit-item:nth-child(3) { bottom: 25%; right: 0; transform: translate(50%, 50%); }
-.orbit-item:nth-child(4) { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
-.orbit-item:nth-child(5) { bottom: 25%; left: 0; transform: translate(-50%, 50%); }
-.orbit-item:nth-child(6) { top: 25%; left: 0; transform: translate(-50%, -50%); }
-@keyframes orbitCounter {
-    0% { rotate: 0deg; }
-    100% { rotate: -360deg; }
-}
-@keyframes orbitFloat {
-    0%, 100% { scale: 1; }
-    50% { scale: 1.15; }
+@keyframes orbitAround {
+    0%   { transform: rotate(0deg)   translateX(160px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
 }
 
 /* Soft glow behind splash */
@@ -562,8 +545,11 @@ a { text-decoration: none; color: inherit; }
     .hero-animation { order: -1; }
     .splash-scene { width: 280px; height: 300px; }
     .splash-svg { width: 220px; }
-    .orbit-ring { width: 260px; height: 260px; }
     .orbit-item { font-size: 1.4rem; }
+    @keyframes orbitAround {
+        0%   { transform: rotate(0deg)   translateX(120px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+    }
 
     .about-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
     .journey-timeline { grid-template-columns: repeat(2, 1fr); gap: 30px; }
